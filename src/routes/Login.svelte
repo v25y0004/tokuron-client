@@ -8,7 +8,7 @@
     let email ="";
     let password ="";
     let errorMessage ="";
-    $: fromValid = email.length > 0 && password.length > 0;
+    $: formValid = email.length > 0 && password.length > 0;
 
     onMount(() => {
         if ($authToken) {
@@ -31,8 +31,8 @@
 </script>
 
 <div class="auth-container">
-    <from on:submit|preventDefault={login} class="auth-from">
-    <div class="from-header">
+    <form on:submit|preventDefault={login} class="auth-form">
+    <div class="form-header">
         <h2>ログイン</h2>
     </div>
     {#if errorMessage}
@@ -50,10 +50,10 @@
         />
     </div>
     <div class="action-group">
-        <button type="submit" class="auth-btn"disabled={!fromValid}>ログイン</button>
+        <button type="submit" class="auth-btn" disabled={!formValid}>ログイン</button>
     </div>
     <div class="switch-auth">
         アカウントを持っていないですか？ <a href="/register">登録はこちらから</a>.
     </div>
-  </from>
+  </form>
 </div>

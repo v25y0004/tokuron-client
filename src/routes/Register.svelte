@@ -4,7 +4,7 @@
   import axios from "axios";
   import { authToken } from "../stores/auth";
   import {API_HOST} from "../constants";
-    import { preventDefault } from "svelte/legacy";
+    
   let name = "";
   let email = "";
   let password = "";
@@ -31,8 +31,8 @@
   $: formValid = email.length > 0 && password.length > 0 && name.length > 0;
 </script>
 <div class="auth-container">
-  <from on:submit|preventDefault={register} class="auth-from">
-    <div class="from-header">
+  <form on:submit|preventDefault={register} class="auth-form">
+    <div class="form-header">
       <h2>アカウント登録</h2>
     </div>
     {#if errorMessage}
@@ -58,5 +58,5 @@
     <div class="switch-auth">
       既にアカウントを持っていますか？<a href="/login">ログインはこちらから</a>
     </div>
-  </from>
+  </form>
 </div>
