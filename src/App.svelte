@@ -2,6 +2,7 @@
 import { Router } from '@mateothegreat/svelte5-router';
 import Register from './routes/Register.svelte';
 import Login from './routes/Login.svelte';
+import Chat from './routes/Chat.svelte';
 
 const routes = [
   {
@@ -13,6 +14,16 @@ const routes = [
     name: 'login',
     path: '/login',
     component: Login,
+  },
+  {
+    name: 'chat-detail',
+    path: '/(?<chatId>[1-g][0-9]*)',
+    component: Chat,
+  },
+  {
+    name: 'chat',
+    path: '/',
+    component: Chat
   }
 ];
 </script>
