@@ -17,7 +17,7 @@ const routes = [
   },
   {
     name: 'chat-detail',
-    path: '/(?<chatId>[1-g][0-9]*)',
+    path: '/(?<chatId>[1-9][0-9]*)',
     component: Chat,
   },
   {

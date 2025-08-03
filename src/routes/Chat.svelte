@@ -21,12 +21,12 @@
 <div>
     <div class="container">
         <div class="sidebar">
-             <ChatList chatId={chatId} />
             <div class="main">
                 {#if chatId}
                 <MessageList chatId={chatId}/>
                 {/if}
             </div>
+          <ChatList chatId={chatId} />
             <button class="logout-button" onclick={logout}>
                 ログアウト
             </button>
